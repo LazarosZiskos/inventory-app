@@ -1,13 +1,9 @@
-import prisma from "../lib/prisma";
+import Sidebar from "../components/Sidebar";
 
 export default async function DashboardPage() {
-  const products = await prisma.product.findUnique({
-    where: { id: "cmjrk40cp0000ngpgwuyuvpnj" },
-  });
   return (
-    <div className="flex items-center justify-center ">
-      {products?.name}
-      <span className="pl-4">${products?.price.toFixed(2)}</span>
+    <div>
+      <Sidebar currentPath="/dashboard" />
     </div>
   );
 }
